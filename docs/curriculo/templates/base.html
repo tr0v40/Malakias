@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>{{titulo}}</title>
+        <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <link rel="shortcut icon" href="{% static "img/icon.png" %}">
+        
+</head>
+    <body>
+            <ul>
+                <li><a href="http://localhost:8000"><i class="fa fa-home"></i></a></li>
+                <li><a href="http://localhost:8000/cursos/">Cursos</a></li>
+                <li><a onclick="Down()">Contato</a></li>
+                <li style="float:right">
+                    <a href="login">Login</a>
+                </li>
+            </ul>
+        
+        {% block content %}  
+        
+        {% endblock %}
+
+        
+        <footer>
+            <h3>Faculdade Impacta</h3>
+                <i class="icon fab fa-google-plus"></i>
+                <i class="icon fab fa-twitter"></i>
+                <i class="icon fab fa-facebook-square"></i>
+        </footer>
+
+    <script src="{% static "js/form.js" %}"></script>
+    <script src="{% static "js/site.js" %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+     integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</body>
+</html>

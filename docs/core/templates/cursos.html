@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <section class="secCourses">
+                {% for curso in cursos %}
+                
+        <div id="course1" class="divCourses" onclick="window.location.href='{{ curso.link }}'">
+                <p class="pCourse">{{curso.nome}}</p>
+        </div>
+                {% endfor %}
+        </section>
+
+{% endblock %}

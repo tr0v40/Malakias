@@ -1,0 +1,463 @@
+CREATE DATABASE LMS
+
+GO
+
+USE LMS
+
+create table Coordenador
+
+(ID_Coordenador int primary key identity (1,1), 
+
+Login VARCHAR (50) UNIQUE,
+
+Senha VARCHAR (20) NOT NULL,
+
+Nome VARCHAR(30) NOT NULL,
+
+Email VARCHAR  (40) UNIQUE not null,
+
+Celular CHAR(9)  UNIQUE,
+
+DtExpiracao DATE DEFAULT '01/01/1900'
+
+)
+
+GO
+
+create table Aluno
+
+(ID_Aluno INT identity (1,1)  PRIMARY KEY,
+
+Login VARCHAR (20) NOT NULL UNIQUE,
+
+Senha VARCHAR (20) NOT NULL,
+
+Nome VARCHAR(30) NOT NULL,
+
+Email VARCHAR  (40) UNIQUE NOT NULL,
+
+Celular CHAR(9)  UNIQUE,
+
+DtExpiracao DATE DEFAULT '01/01/1900',
+
+RA VARCHAR (20),
+
+Foto VARCHAR (255) NULL
+
+)
+
+GO
+
+create table Professor
+
+(ID_Professor  INT identity (1,1) PRIMARY KEY,
+
+Login VARCHAR (20) UNIQUE,
+
+Senha VARCHAR (20) NOT NULL,
+
+Nome VARCHAR(30) NOT NULL,
+
+Email VARCHAR  (40) UNIQUE NOT NULL,
+
+Celular CHAR(9)  UNIQUE,
+
+DtExpiracao DATE DEFAULT '01/01/1900',
+
+Apelido VARCHAR (20)
+
+)
+
+GO
+
+create table Disciplina
+
+(ID_Disciplina int primary key identity not null,
+
+Nome VARCHAR (30) UNIQUE,
+
+Data DATE DEFAULT getdate(),
+
+Status VARCHAR (20) check (Status = 'Aberta'or Status = 'Fechado') default 'Aberta',
+
+PlanodeEnsino VARCHAR (999),
+
+Cargahoraria INT CHECK(Cargahoraria=40 or Cargahoraria=80),
+
+Competencias VARCHAR (999),
+
+Hobilidades VARCHAR (999),
+
+Ementa VARCHAR (999),
+
+ConteudoProgramatico VARCHAR (999),
+
+BibliografiaBasica VARCHAR (999),
+
+BibliografiaComplementar VARCHAR (999),
+
+PercentualPratico INT CHECK (PercentualPratico>=00 and PercentualPratico<=100),
+
+PercentualTeorico INT CHECK (PercentualTeorico>=00 and PercentualTeorico<=100),
+
+ID_Coordenador INT FOREIGN KEY REFERENCES Coordenador(ID_Coordenador)
+
+)
+
+GO
+
+create table Curso
+
+(ID_Curso INT identity NOT NULL PRIMARY KEY,
+
+Nome varchar(30) UNIQUE NOT NULL
+
+)
+
+GO
+
+create table DisciplinaOfertada
+
+(ID_DisciplinaOfertada INT IDENTITY NOT NULL PRIMARY KEY,
+
+ID_Coordenador INT FOREIGN KEY REFERENCES  Coordenador(ID_Coordenador),
+
+DtInicioMatricula DATE NULL,
+
+DtFimMatricula DATE NULL,
+
+ID_Disciplina INT FOREIGN KEY REFERENCES Disciplina(ID_Disciplina),
+
+ID_Curso INT FOREIGN KEY REFERENCES Curso(ID_Curso),
+
+Ano INT CHECK(Ano>=1900 and Ano<=2100),
+
+Semestre INT CHECK(Semestre=1 and Semestre=2),
+
+Turma VARCHAR (6),
+
+ID_Professor INT FOREIGN KEY REFERENCES Professor(ID_Professor),
+
+Metodologia VARCHAR (999),
+
+Recursos VARCHAR (999),
+
+CriterioAvaliacao VARCHAR (999),
+
+PlanoDeAulas VARCHAR (999)
+
+)
+
+GO
+
+create table SolicitacaoMatricula
+
+(ID_SolicitacaoMatricula INT PRIMARY KEY IDENTITY NOT NULL,
+
+ID_Aluno INT FOREIGN KEY REFERENCES Aluno(ID_Aluno),
+
+ID_DisciplinaOfertada INT FOREIGN KEY REFERENCES DisciplinaOfertada(ID_DisciplinaOfertada),
+
+DtSolicitacao DATE DEFAULT getdate() NOT NULL,
+
+ID_Coordenador INT FOREIGN KEY REFERENCES Coordenador(ID_Coordenador),
+
+Status VARCHAR (20) CHECK (Status='Solicitada' OR Status='Aprovada' OR Status='Rejeitada' OR Status='Cancelada') default 'Solicitada'
+
+)
+
+--sp_help SolicitacaoMatricula = selecionar o nome da tabela e apertar ALT+F1
+
+GO
+
+create table Atividade
+
+(ID_Atividade INT PRIMARY KEY IDENTITY NOT NULL,
+
+Titulo VARCHAR (50) UNIQUE,
+
+Descricao VARCHAR (999),
+
+Conteudo VARCHAR (999),
+
+Tipo VARCHAR (15) check(Tipo='RESPOSTA ABERTA' or Tipo='TESTE'),
+
+Extras VARCHAR (999),
+
+ID_Professor INT FOREIGN KEY REFERENCES Professor(ID_Professor)
+
+)
+
+GO
+
+create table AtividadeVinculada
+
+(ID_AtividadeVinculada INT PRIMARY KEY IDENTITY NOT NULL,
+
+ID_Atividade INT FOREIGN KEY REFERENCES Atividade(ID_Atividade),
+
+ID_Professor INT FOREIGN KEY REFERENCES Professor(ID_Professor),
+
+ID_DisciplinaOfertada INT FOREIGN KEY REFERENCES DisciplinaOfertada(ID_DisciplinaOfertada),
+
+Rotulo VARCAHR (150) UNIQUE CHECK(Rotulo='Disponibilizada' or Rotulo='Aberta' or Rotulo='Fechada'
+
+or Rotulo='Encerrada' or Rotulo='Prorrogada'),
+
+Status VARCHAR(20),
+
+DtInicioRespostas DATE DEFAULT '01/01/1900',
+
+DtFimRespostas DATE DEFAULT '01/01/1900'
+
+)
+
+GO
+
+create table Entrega
+
+(ID_Entrega INT PRIMARY KEY IDENTITY NOT NULL,
+
+ID_Aluno INT FOREIGN KEY REFERENCES Aluno(ID_Aluno),
+
+AtividadeVinculada INT FOREIGN KEY REFERENCES AtividadeVinculada(ID_AtividadeVinculada),
+
+Titulo VARCHAR (50),
+
+Resposta VARCHAR (150),
+
+DtEntrega DATE DEFAULT getdate(),
+
+Status VARCHAR (20) CHECK (Status='Entregue' or Status='Corrigido'),
+
+ID_Professor INT FOREIGN KEY REFERENCES Professor(ID_Professor),
+
+Nota DECIMAL(4,2) CHECK (Nota>=0.00 and Nota<=10.00),
+
+DtAvaliacao DATE NOT NULL,
+
+Obs VARCHAR (999)
+
+)
+
+GO
+
+create table Mensagem
+
+(ID_Mensagem INT PRIMARY KEY IDENTITY NOT NULL,
+
+ID_Aluno INT FOREIGN KEY REFERENCES Aluno(ID_Aluno),
+
+ID_Professor INT FOREIGN KEY REFERENCES Professor(ID_Professor),
+
+Assunto VARCHAR (999),
+
+Referencia VARCHAR (999),
+
+Conteudo VARCHAR (999),
+
+Status VARCHAR (20) CHECK (Status='Enviado' and Status='lido' and Status='Respondido') default 'Enviado',
+
+DtEnvio datetime default getdate(),
+
+DtResposta DATE,
+
+Resposta VARCHAR (999),
+
+)
+
+INSERT:
+
+--inserção de coordenador
+
+insert into Coordenador (login,senha,nome) values ('anac@impacta.com.br','1234','Ana Cristina')
+
+--inserção de Aluno
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Douglas1706115','1234','Douglas','1706115','douglas1706115@impacta.com.br','963458675')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Andre1802115','1234','Andre','1802115','andre1802115@impacta.com.br','956305216')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Patricia1501285','1234','Patricia','1501285','patricia1501285@impacta.com.br','956305213')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Marco1705842','1234','Marco','1705842','marco1705842@impacta.com.br','923568416')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Matheus1702518','1234','Matheus','1702518','matheus1702518@impacta.com.br','956348596')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Pablo1825696','1234','Pablo','1825696','pablo1825696@impacta.com.br','963258741')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Priscila1725669','1234','Priscila','1725669','priscila1725669@impacta.com.br','975863216')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Tayna1708563','1234','Tayna','1708563','tayna1708563@impacta.com.br','985367563')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Paula1805685','1234','Paula','1805685','paula1805685@impacta.com.br','996358642')
+
+insert into aluno (login, senha, nome, ra, email, celular) values ('Luiza1745236','1234','Luiza','1745236','luiza17452362impacta.com.br','989632145')
+
+--inserção de professor
+
+insert into professor (login, senha, nome, email, celular) values ('Gilberto1234','1234','Gilberto','Gilberto@impacta.com.br','29814608')
+
+insert into professor (login, senha, nome, email, celular) values ('Gabriela1234','1234','Gabriela','gabriela@impacta.com.br','29816490')
+
+insert into professor (login, senha, nome, email, celular) values ('Gustavo1234','1234','Gustavo','Gustavo@impacta.com.br','29814888')
+
+insert into professor (login, senha, nome, email, celular) values ('Marcos1234','1234','Marcos','marcos@impacta.com.br','29812345')
+
+insert into professor (login, senha, nome, email, celular) values ('Jose1234','1234','Jose','jose@impacta.com.br','92814608')
+
+--inserção de curso
+
+insert into curso (nome) values ('ADM')
+
+insert into curso (nome) values ('ADS')
+
+insert into curso (nome) values ('BD')
+
+insert into curso (nome) values ('GTI')
+
+insert into curso (nome) values ('JOGOS DIGITAIS')
+
+insert into curso (nome) values ('PROCESSOS GERENCIAIS')
+
+insert into curso (nome) values ('PRODUCAO MULTIMIDIA')
+
+insert into curso (nome) values ('REDES DE COMPUTADORES')
+
+insert into curso (nome) values ('SISTEMA DA INFORMACAO')
+
+--inserção de disciplina
+
+insert into disciplina (nome, planodeensino, cargahoraria) values ('tecweb', 'html, css3, JS, Python, sessao e autenticacao', '80')
+
+insert into disciplina (nome, planodeensino, cargahoraria) values ('SQL', 'Atividades contínuas (AC) diárias para acompanhamento do processo ensino aprendizagem', '80')
+
+--insert de disciplinaofertada
+
+insert into disciplinaofertada (dtiniciomatricula, dtfimmatricula, id_disciplina, ID_Curso, ano, turma) values ('150118','180630','2', '9', '2018', 'B')
+
+insert into disciplinaofertada (dtiniciomatricula, dtfimmatricula, id_disciplina, ID_Curso, ano, turma) values ('180105','180630','2', '2', '2018', 'B')
+
+update disciplinaofertada set id_professor='1' where id_disciplinaofertada ='3'
+
+update disciplinaofertada set id_professor='2' where id_disciplinaofertada ='4'
+
+update disciplinaofertada set DtInicioMatricula='180205' where id_disciplinaofertada ='3'
+
+update disciplinaofertada set DtFimMatricula='180615' where id_disciplinaofertada ='3'
+
+insert into solicitacaomatricula (id_aluno, id_disciplinaofertada, dtsolicitacao, id_coordenador, Status) values ('01','1','170905','01','Rejeitada')
+
+insert into solicitacaomatricula (id_aluno, id_disciplinaofertada, dtsolicitacao, id_coordenador, Status) values ('02','2','171105','01','Aprovada')
+
+insert into solicitacaomatricula (id_aluno, ID_DisciplinaOfertada, dtsolicitacao, ID_Coordenador, Status) values ('05','2','180101','1','Solicitada')
+
+SELECT:
+
+select dis.ID_Professor,sol.ID_Aluno,p.Nome as 'Nome Professor',a.Nome as 'Nome Aluno',dis.Turma,dis.Ano from DisciplinaOfertada as dis
+
+join SolicitacaoMatricula as sol
+
+on dis.ID_DisciplinaOfertada = sol.ID_DisciplinaOfertada
+
+join Aluno as a
+
+on sol.ID_Aluno = a.ID_Aluno
+
+join Professor as p
+
+on dis.ID_Professor = p.ID_Professor
+
+where sol.Status = 'Aprovada'
+
+select nome as 'Disciplina', Status,PlanodeEnsino,Cargahoraria from Disciplina
+
+where Status = 'Aberta'
+
+-- Select
+
+select d.Nome as 'Disciplina',a.Nome as 'Nome Aluno',p.Nome as 'Nome Professor',dis.Turma,e.Status from Aluno as a
+
+join Entrega as e
+
+on e.ID_Aluno = a.ID_Aluno
+
+join Professor as p
+
+on p.ID_Professor = e.ID_Professor
+
+join DisciplinaOfertada as dis
+
+on dis.ID_Professor = p.ID_Professor
+
+join Disciplina as d
+
+on d.ID_Disciplina = dis.ID_Disciplina
+
+where e.Status is null
+
+select p.Nome as 'Nome Professor',e.Status,e.Nota from Entrega as e
+
+join Professor as p
+
+on p.ID_Professor = e.ID_Professor
+
+where e.Status = 'entregue'
+
+select co.Nome as 'Coordenador', di.Nome as 'Disciplina',p.Nome as 'Professor' from DisciplinaOfertada as dis
+
+join Coordenador as co
+
+on co.ID_Coordenador = dis.ID_Coordenador
+
+join Disciplina as di
+
+on di.ID_Disciplina = dis.ID_Disciplina
+
+join Professor as p
+
+on p.ID_Professor = dis.ID_Professor
+
+where p.Nome is null
+
+COMENTÁRIOS:
+
+--alterado o tamanho de caracter do login do coordenador de 15 para 50
+
+--alterado o tamanho de caracter do login do aluno de 15 para 50
+
+-- Adicionado IDprofessor e alterado Turma em disciplinaOfertada
+
+-- Vinculando ID_Coordenador na tabela DisciplinaOfertada
+
+--update DisciplinaOfertada
+
+--set ID_Coordenador = 1
+
+--Vinculando ID_Coordenador na tabela Disciplina
+
+--update Disciplina
+
+--set ID_Coordenador = 1
+
+-- alterado ID_Disciplina da tabela DisciplinaOfertada
+
+--update DisciplinaOfertada set ID_Disciplina = 1 where ID_DisciplinaOfertada = 1
+
+-- Inserimos dados na tabela entrega:
+
+Insert into Entrega (ID_Aluno, Titulo, Status , ID_Professor)
+
+Values (2,'Criacao do banco','Entregue',1)
+
+Insert into Entrega (ID_Aluno, Titulo , Status, ID_Professor)
+
+values (3, 'Criacao do banco', 'Corrigido', 2)
+
+Insert into Entrega (ID_Aluno,Titulo, ID_Professor)
+
+values (4, 'Criacao do banco', 2)
+
+Insert into Entrega (ID_Aluno,Titulo, ID_Professor)
+
+values (5, 'Criacao do banco', 2)

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+    <div class="divPad">
+
+        <table class="tables_details_courses">
+                
+            <tr>
+                <th>1º Semestre</th>
+            </tr>
+                {% for disc in disc_sem1 %}
+            <tr>
+                <td> <button class="BotaoSaibaMais">{{disc}}</button> </td>
+            </tr> 
+                {% endfor %}
+        </table>
+
+                
+
+        <table class="tables_details_courses">    
+            <tr>
+                <th>2º Semestre</th>
+            </tr>
+                {% for disc in disc_sem2 %}
+            <tr>
+                <td> <button class="BotaoSaibaMais"> {{disc}} </button> </td>
+            </tr> 
+                {% endfor %}
+        </table>
+            
+                
+
+        <table class="tables_details_courses">
+            <tr>
+                <th>3º Semestre</th>
+            </tr>
+                {% for disc in disc_sem3 %}
+            <tr>
+                <td> <button class="BotaoSaibaMais">{{disc}}</button> </td>
+            </tr> 
+                {% endfor %}
+        </table>
+
+        
+
+        <table class="tables_details_courses">
+            <tr>
+                <th>4º Semestre</th>
+            </tr>
+                {% for disc in disc_sem4 %}
+            <tr>
+                <td> <button class="BotaoSaibaMais"> {{disc}} </button> </td>
+            </tr> 
+                {% endfor %}
+        
+        </table>
+
+{% endblock %}
