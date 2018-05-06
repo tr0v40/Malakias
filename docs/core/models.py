@@ -1,7 +1,9 @@
-#models.py
+#IMPORTS
 from django.db import models
 
 from django.db import models
+
+#MODELS
 
 class Aluno(models.Model):
     idAluno = models.AutoField(db_column='ID_Aluno', primary_key=True) 
