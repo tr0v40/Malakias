@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            <section style="margin-top: 8%">
+                    <form name="formulario" method="POST" action="" onsubmit="return validacao()">
+                        <div style="display: inline-block">
+                                <input type="text"  placeholder="Login"  id="login">
+                        
+                                <input type="text"  placeholder="Nome" name="nome" id="nome" >
+                            
+                                <input type="email" placeholder="Email" id="email_usuario" >
+    
+                                <input type="email" placeholder="Senha">
+                         
+                            <input type="tel"   class="cadAluno" placeholder="Celular" >
+                        </div>
+                        <div>
+                            <input class="btn_new_course" type="submit">
+                        </div>
+                        
+                         </form>
+            </section>
+ {% endblock %}

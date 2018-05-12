@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section style="margin-top: 8%">
+            <div class="divForm" style="margin-top: 8%">
+                {% for curso in cursos %}
+              <p>{{ curso.nome }}</p> 
+              <a href="{% url 'alterarcurso' curso.idcurso %}">ALTERAR</a>
+              <a href="{% url 'deletarcurso' curso.idcurso %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>  
+                {% endfor %}             
+              
+            </div>
+        </section>
+
+{% endblock %}

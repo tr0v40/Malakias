@@ -1,0 +1,659 @@
+/* ------ Tags ----- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html { height:100%; }
+body{
+
+    font-family: 'Secular One', sans-serif;
+    background-color: rgba(0, 0, 0, 0.9 );
+    text-shadow: 2px 0px 0px black, 
+    -2px 0px 0px black, 
+    0px 2px 0px black, 
+    0px -2px 0px black;
+    text-align: center;
+    overflow: auto;
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    right:0; 
+    left:0;
+    box-sizing: border-box;
+    
+}
+
+/*-----------------Scroll Bar--------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:transparent; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+    background:  #4169E1; 
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+h1{ 
+    box-sizing: border-box;
+    font-size: 7vw;
+    margin-left: 25%;
+    margin-right: 2%; 
+    position: absolute;
+    bottom:5%;
+    color: white;
+    animation-name: h1Animation;
+    animation-duration: 3.5s;
+}
+
+h4 {
+    font-size: 4vw;
+    color: white;
+}
+
+p {
+    color: white;
+    
+}
+
+.pForm{
+    margin: 1%;
+    width: 100%;
+}
+
+ul {
+    z-index: 9;
+    position: fixed;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.492);
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+table {
+    background-color: rgba(0, 0, 0, 0.212);
+    color: white;
+    position: relative;
+    border: 2px solid #4169E1;
+    padding: 5px;
+    max-width: 100%;
+   
+}
+
+.cadAluno {
+   
+    display: block;
+    height: 30px;
+}
+
+tr, th, td {
+    background-color: rgba(0, 0, 0, 0.212);
+    color: white;
+    position: relative;
+    width: 20%;
+    padding: 5px;
+ 
+
+}
+
+label{
+    color: white;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+    color: #4169E1;
+}
+
+header{
+    position: relative;
+    padding: 5%;
+    height:80vh;
+    background-size: cover;
+    background-image: url('../img/homePage.jpeg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+section{
+    max-width: 100%;
+    padding-top: 5%;
+    position: relative;
+}
+
+fieldset {
+    border:2px solid #4169E1;
+}
+
+textarea{
+    background-color: rgba(0, 0, 0, 0.792);
+    border: 2px solid #4169E1;
+    resize: none;
+    color: white;
+    font-size: 25px; 
+}
+
+input, select {
+    border: 2px solid #4169E1;
+    background-color: rgba(0, 0, 0, 0.792);
+    max-width: 90%;
+    margin: 2%;
+    padding: 5px;
+    color: white;
+    font-size: 25px; 
+      
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 7px 0;
+
+
+ }
+
+ iframe {
+     margin-top: 2%;
+     border-radius: 10px;
+     display: inline-block;
+ }
+
+
+
+.icon {
+    margin: 3px;
+}
+
+.log {
+    background-image: url('../img/loginScreen.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+
+input.btn_new_course {
+    background: linear-gradient(to right , #4169E1 , #4169E1 , black);
+    border: none;
+    width: 30%;
+    border-radius: 10px;
+    
+}
+
+
+/* ---------------------------------- */ 
+.footerLogin {
+    position: fixed;
+    bottom:0;
+}
+
+.divLogin {
+    position: relative;
+    margin: 9% auto 0; 
+    height: auto;
+    display: block;
+    max-width: 55%;
+    padding:5%;
+   
+}
+
+.numbers{
+    color: white !important;
+}
+
+.divPad {
+    padding: 0 2% ;
+}
+
+.tables_details_courses{
+    border: 1px solid #4169E1;
+    float: left;
+    margin-top: 1%; 
+    width: 25% ;
+}
+
+.tables_details_courses td{
+    background-color: rgba(0, 0, 0, 0.212);
+    height: 100px;
+    width: 100% ;
+}
+
+.BotaoSaibaMais{
+    background-color: rgba(0, 0, 0, 0.212);
+    font-size: 12px;
+    height: 60%;
+    width: 80%;
+    color: white;
+    border: 1px solid #4169E1;
+    cursor: pointer;
+}
+.parc {
+    color: #4169E1;
+    font-size: 5vh;
+}
+
+.tables_details_courses th {
+    color:  white ; 
+}
+    
+.divForm {
+    position: absolute;
+    left: 20%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    max-width: 90%;
+    padding: 0 5%;
+   
+}
+
+.BotaoSaibaMais:hover {
+    background: linear-gradient(to left , #4169E1 , #4169E1 , black)
+}
+
+.fa-home{
+    color: #4169E1;
+}
+
+
+.session_new_course{
+
+    width: 327px;
+}
+
+
+.sectionHome{
+    width: 100%;
+    height:55vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: flex-start;
+    padding: 3% !important;
+    box-sizing: border-box;
+}
+
+.battleSection {
+    width: 90%;
+    height: auto;
+    padding: 5%;
+}
+
+.robotDesc {
+    font-size: 2.5vw;
+}
+
+
+
+.img_courses{
+    width: 100%;
+    height: 39vw;
+
+}
+
+
+.camps_new_course{
+    width: 20%;
+    height: 17px; 
+}
+
+
+.ch_new_course {
+    height: 15px;
+    font-size: 16px ;
+    width: 20% ;
+    text-align: center ;
+}
+ 
+.alignForm {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    margin: 1%;
+}
+
+.linha-vertical {
+    display: inline-block;
+    height: 300px;
+    border-left: 2px solid #4169E1;
+}
+
+
+.contatos {
+    margin: 5%;
+    font-size: 2.8vh;
+}
+
+.contatos p {
+   color: #4169E1;
+}
+
+.secCourses{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4%;
+    box-sizing: border-box;
+}
+
+
+.divCourses{
+    width: 30%;
+    background-color: #4169E1;
+    height: 300px;
+    box-sizing: border-box;
+    margin: 1%;
+    border-radius: 15px;
+    
+}
+
+.divCourses:hover {
+    opacity: 0.5;
+}
+
+.btn_new_course:hover{
+    background: linear-gradient(to right , #4169E1 , #4169E1 , black);
+    border: none;
+}
+
+.pCourse{
+    margin-top: 35%;
+    font-size: 3.5vh;
+}
+
+#course_developer{
+    border: 1px solid white ;
+}
+
+#course1{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/gameCourse.jpg');
+} 
+
+#course2{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/bdCourse.jpeg');
+} 
+
+#course3{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/adsCourse.jpeg');
+    
+}
+
+#course4{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/uxCourse.jpeg');
+    
+} 
+
+#course5{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/droneCourse.jpg');
+} 
+
+#course6{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/arduinoCourse.jpeg');
+} 
+
+
+#button_dir {
+    background-color: black ; 
+    border: 1px  solid #4169E1  ;
+}
+
+
+@media screen and (max-width: 1100px) {
+    header {
+        height:65vw;
+        background-size: contain;
+
+    }
+    h1 {
+        margin-bottom: 5%;
+    }
+    .sectionHome {
+        height: 65vw;
+        background-size: contain;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    
+}
+
+@media screen and (max-width: 769px ) {
+    header{
+        height:55vw;
+        background-size: contain;
+       
+    }
+
+    h1{
+    
+        font-size: 8vw;
+        margin-left: 18%;
+
+    }
+
+    .description_course {
+        width: 100%;    
+        height: 100%;
+    }
+
+    .tables_details_courses{
+        display: table;
+        width: 100%;
+    }
+
+    .course_name{
+        width: 100%;
+    }
+
+    #form_part_2 select{
+        background-color: rgba(61, 60, 60, 0.479);
+        border-color: #4169E1 ; 
+        height: 40px ;
+        color: white ; 
+        width: 100% ; 
+        margin-bottom: 20px;
+    
+    }
+
+    #form_part_3 select {
+        background-color: rgba(61, 60, 60, 0.479);
+        border-color: #4169E1 ; 
+        height: 40px ;
+        width: 100% ;
+        color: white ; 
+    }
+
+    .ch_new_course {
+        height: 15px;
+        font-size: 16px ;
+        width: 100% ;
+        text-align: center ;
+        margin-left: 0px ;
+    }
+
+    #name_cord{
+        height: 20px;
+        width: 100% ;
+        font-size: 18px ;
+        margin-left: 0px ;
+        text-align: center ; 
+    }
+
+    #btn_new_course{
+        width: 80% ;
+        font-size: 17px ;
+    }
+
+    .log {
+        background-size: 265vw;
+      
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .sectionHome {
+        height: 60vw;
+        background-size: contain;
+    }
+    .telaLogin {
+        width: 60%;   
+    }
+
+    #btn_login {
+        font-size: 25px ;
+        height: 30px;
+    }
+
+    #name_cord{
+        height: 20px;
+        width: 100% ;
+        font-size: 14px ;
+        margin-left: 0px ;
+        text-align: center ; 
+    }
+    .ch_new_course {
+        height: 15px;
+        font-size: 14px ;
+        width: 100% ;
+        text-align: center ;
+        margin-left: 0px ;
+    }
+
+    input.btn_new_course {
+        width: 40%
+    }
+    .divContato {
+        margin-top: 5%;
+    }
+
+    .alignForm {
+        margin: 4%;
+        width: 90%;
+        position: relative;
+        display:block;
+       
+    }
+    
+    .linha-vertical {
+        display:none;
+       
+      }
+
+      .divCourses{
+        margin: 4%;
+        display: block;
+        width: 90%;
+        height: 300px;
+    }
+ 
+}
+
+@media screen and (max-width: 450px) {
+    input.btn_new_course {
+        width: 55%
+    }
+
+    .divCheck{
+       max-width: 100%;
+       display: inline-flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .divImgs {
+        display: inline-block;
+    }
+
+    .card{
+        width: 95%;
+    }
+
+    .telaLogin {
+        width: 50%;
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .divImgs {
+        display: inline-block;
+    }
+    
+    .card{
+        width: 95%;
+    }
+    input {
+        height: 50px;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+    .divContato {
+        margin-top: 9%;
+    }
+}
+
+
+/* -------------- animation ------------*/
+
+@keyframes h1Animation {
+    0%   {left:-10%; opacity: 0.5;}
+    50%   {opacity: 0.8;}
+    100%  {left:5%; opacity: 1;}    
+}
+
+
+@keyframes pAnimation {
+    0%   {left:-10%; opacity: 0.5;}
+    100%  {left:5%; opacity: 1;}    
+}
+

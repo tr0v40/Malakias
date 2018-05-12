@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <header>
+            <h1>Faculdade Impacta</h1> 
+        </header>
+
+        
+        
+        <section class="sectionHome">
+            <p class="parc">Parcerias</p>
+            <img src="https://www.impacta.edu.br/themes/wc_agenciar3/images/parceiros.png" width="80%" height="100%">
+        </section>
+        
+        <section class="divContato">
+            <p class="parc">Contato</p>
+            
+            <div class="alignForm">
+               <input type="text" placeholder="Nome">
+               <input type="email" placeholder="E-mail">
+               <textarea rows="4" cols="21" placeholder="Mensagem"></textarea>
+               <center>
+                   <input class="btn_new_course"  type="submit" style="display: block">
+                </center>
+            </div>
+            
+
+            <div class="linha-vertical"></div>
+
+            <div class="alignForm">
+                <div class="contatos">
+                    <p>Comercial</p>
+                    <p class="numbers">(11) 9999-9999</p>
+                </div>
+
+                <div class="contatos">
+                    <p>Financeiro</p>
+                    <p class="numbers">(11) 9999-9999</p>
+                </div>
+
+                <div class="contatos">
+                    <p>Secretária</p>
+                    <p class="numbers">(11) 9999-9999</p>
+                </div>
+        
+        </section>
+
+    
+
+{% endblock %}

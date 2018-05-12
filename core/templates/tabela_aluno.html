@@ -1,0 +1,782 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+            <section class="secCourses">
+    
+            <p class="pForm">Nome do Curso: Análise e Desenvolvimento de Sistemas</p>
+    
+            <p class="pForm">Disciplina: Tecnologia Web</p>
+    
+            <p class="pForm">Semestre: 2º - 2018</p>
+    
+            <p class="pForm">Turma: 2B</p>
+    
+            <p class="pForm">Alunos:</p>
+    
+            <form name="mat" id="save" onsubmit="valid()" method="POST">
+            <table>
+                <tr>
+                    <th>R.A</th> <th>Nome</th> <th>Status</th>
+                </tr>
+                
+                <tr>
+                    <td>1</td> 
+                    <td>ADRIANA</td>
+                    <td>
+                        <input onchange="soma('Aprovado')" type="radio" value="Aprovado" name="status1">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status1">Cancelado 
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>2</td> 
+                    <td>ADRIANO</td>
+                    <td>
+                        <input class="ap" onchange="soma('Aprovado')" type="radio" value="Aprovado" name="status2">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status2">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>3</td> 
+                    <td>AGATHA</td>
+                    <td>
+                        <input class="ap" onchange="soma('Aprovado')" type="radio" value="Aprovado" name="status3">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status3">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>4</td> 
+                    <td>ALESSANDRO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status4">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status4">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>5</td> 
+                    <td>ANA CAROLINE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status5">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status5">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>6</td> 
+                    <td>ARTHUR</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status6">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status6">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>7</td> 
+                    <td>BRUNA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status7">Aprovado 
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status7">Cancelado 
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>8</td> 
+                    <td>BRUNO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status8">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status8">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>9</td> 
+                    <td>CAIO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status9">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status9">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>10</td> 
+                    <td>CAMILA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status10">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status10">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>11</td> 
+                    <td>CARLA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status11">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status11">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>12</td> 
+                    <td>CAROLINA </td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status12">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status12">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>13</td> 
+                    <td>CLARA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status13">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status13">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>14</td> 
+                    <td>CONRADO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status14">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status14">Cancelado
+                    </td>
+                </tr>
+    
+                
+                <tr>
+                    <td>15</td> 
+                    <td>DEBORA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status15">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status15">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>16</td> 
+                    <td>EDUARDO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status16">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status16">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>17</td> 
+                    <td>FABIO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status17">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status17">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>18</td> 
+                    <td>FELIPE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status18">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status18">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>19</td> 
+                    <td>FERNANDA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status19">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status19">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>20</td> 
+                    <td>FERNANDO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status20">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status20">Cancelado
+                    </td>
+                </tr>
+    
+                
+                <tr>
+                    <td>21</td> 
+                    <td>FILIPE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status21">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status21">Cancelado</td>
+                </tr>
+    
+                <tr>
+                    <td>22</td> 
+                    <td>FLAVIO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status22">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status22">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>23</td> 
+                    <td>FRANCISCO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status23">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status23">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>24</td> 
+                    <td>GABRIEL</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status24"> Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status24">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>25</td> 
+                    <td>GABRIELE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status25">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status25">Cancelado</td>
+                </tr>
+    
+                <tr>
+                    <td>26</td> 
+                    <td>GABRIELA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status26">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status26">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>27</td> 
+                    <td>GIOVANNA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status27">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status27">Cancelado
+                    </td>
+                </tr>
+    
+                    <tr>
+                    <td>28</td> 
+                    <td>GISELE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status28">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status28">Cancelado</td>
+                    </tr>
+    
+    
+                <tr>
+                    <td>29</td> 
+                    <td>HECTOR</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status29">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status29">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>30</td> 
+                    <td>HELENA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status30">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status30">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>31</td> 
+                    <td>HELLEN</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status131">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status131">Cancelado
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>32</td> 
+                    <td>HENRIQUE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status32">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status32">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>33</td> 
+                    <td>HUGO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status33">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status33">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>34</td> 
+                    <td>IAGO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status34">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status34">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>35</td> 
+                    <td>IAN</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status35">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status35">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>36</td> 
+                    <td>ICARO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status36">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status36">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>37</td> 
+                    <td>IGOR</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status37">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status37">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>38</td> 
+                    <td>INES</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status38">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status38">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>39</td> 
+                    <td>INGRID</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status39">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status39">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>40</td> 
+                    <td>ISAAC</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status40">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status40">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>41</td> 
+                    <td>ISABELA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status41">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status41">Cancelado
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>42</td> 
+                    <td>ISABELLE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status42">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status42">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>43</td> 
+                    <td>ISABELI</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status43">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status43">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>44</td> 
+                    <td>ISADORA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status44">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status44">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>45</td> 
+                    <td>ITALO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status45">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status45">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>46</td> 
+                    <td>IVAN</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status46">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status46">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>47</td> 
+                    <td>JACKELINE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status47">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status47">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>48</td> 
+                    <td>JADE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status48">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status48">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>49</td> 
+                    <td>JANAINA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status49">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status49">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>50</td> 
+                    <td>JESSICA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status50">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status50">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>51</td> 
+                    <td>JOAO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status51">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status51">Cancelado
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>52</td> 
+                    <td>JOSE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status52">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status52">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>53</td> 
+                    <td>JOYCE</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status53"> Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status53">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>54</td> 
+                    <td>JULIA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status54"> Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status54">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>55</td> 
+                    <td>JULIANA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status55">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status55">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>56</td> 
+                    <td>KAREN</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status56">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status56">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>57</td> 
+                    <td>KARINA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status57">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status57">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>58</td> 
+                    <td>KATIA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status58">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status58">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>59</td> 
+                    <td>LAIS</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status59">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status59">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>60</td> 
+                    <td>LARA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status60">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status60">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>61</td> 
+                    <td>LARISSA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status61">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status61">Cancelado
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>62</td> 
+                    <td>LAURA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status62">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status62">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>63</td> 
+                    <td>LEONARDO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status63">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status63">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>64</td> 
+                    <td>LETICIA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status64">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status64">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>65</td> 
+                    <td>LETICIA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status65">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status65">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>66</td> 
+                    <td>LUCAS</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status66">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status66">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>67</td> 
+                    <td>LUIS</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status67">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status67">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>68</td> 
+                    <td>MAIARA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status68">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status68">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>69</td> 
+                    <td>MARCELO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status69">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status69">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>70</td> 
+                    <td>MARCIO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status70">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status70">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>71</td> 
+                    <td>MARIA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status71">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status71">Cancelado
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <td>72</td> 
+                    <td>PEDRO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status72">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status72">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>73</td> 
+                    <td>RAFAEL</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status73">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status73">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>74</td> 
+                    <td>RENAN</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status74">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status74">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>75</td> 
+                    <td>RENATA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status75">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status75">Cancelado
+                    </td>
+                </tr>
+                    
+    
+                <tr>
+                    <td>76</td> 
+                    <td>RODRIGO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status76">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status76">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>77</td> 
+                    <td>SARA</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status77">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status77">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>78</td> 
+                    <td>SERGIO</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status78">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status78">Cancelado
+                    </td>
+                </tr>
+    
+    
+                <tr>
+                    <td>79</td> 
+                    <td>THAIS</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status79">Aprovado   
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status79">Cancelado
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>80</td> 
+                    <td>VINICIUS</td>
+                    <td>
+                        <input type="radio" onchange="soma('Aprovado')" value="Aprovado" name="status80">Aprovado
+                        <input type="radio" onchange="soma('Cancelado')" value="Cancelado" name="status80">Cancelado
+                    </td>
+                </tr>
+            </table>
+
+            <input class="btn_new_course" type="submit">
+            </form>
+        </section>
+ 
+{% endblock %}

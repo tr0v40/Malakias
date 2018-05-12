@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="alignDiv">
+        <fieldset class="description_course" style="margin-top: 12%;width: 86%;margin-left: auto;margin-right: auto;">
+            <legend><h2 class="h2Title"> {{ curso }} </h2></legend>
+            <h2 style="color:white "> SOBRE O CURSO</h2> 
+            <p>{{descricao}}.</p>
+            <p>{{perfil}}.</p>
+            <p>{{mercado}}.</p>
+        </fieldset>
+            
+                <button onclick="window.location.href='{{link_grade.link}}'" style="width: 100px ;height: 100px"><p>{{link_grade.nome}}</p></button>
+        
+     </div>
+
+     
+{% endblock %}

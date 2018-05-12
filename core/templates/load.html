@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <body style="background-color: black;">
+         
+            <img src='../img/load.gif' id='loader' width="48%" >
+        
+        <script>
+
+            setTimeout(
+                function(){ 
+                    loader.style.display='none'; 
+                    window.location.href='index.html'
+                },3500);
+
+        </script>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <section>
+            <div class="divForm">                
+                <form  method="POST"  action="">
+                   
+                    <div class="divAdjust">
+                        <div>
+                            <input placeholder="Nome Da Disciplina" name="nome_disciplina" required>
+                        </div>
+
+                        <div>
+                            <input type="date" placeholder="Data" name="data" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Status" name="status" required>
+                        </div>
+
+                        <div>
+                            <input placeholder="Plano de Ensino" name="plano_ensino" type="text" required>
+                        </div>
+
+                        <div>
+                            <input placeholder="Carga Horaria" name="carga_horaria" required>
+                        </div>
+
+                        <div>
+                            <input placeholder="Competencias" name="competencias" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Ementa" name="ementa" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Habilidades" name="habilidades" required>
+                        </div>
+                    </div>
+
+                    <div class="divAdjust">
+                        <div>
+                            <input type="text" placeholder="Conteudo Programatico" name="conteudo_programatico" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Bibliografia Basica" name="bib_basica" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Bibliografia Complementar" name="bibcomplementar" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Percentual Pratico" name="porc_pratico" required>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Percentual Teorico" name="porc_teorico" required>
+                        </div>
+                    
+                        
+                        <<select name='coordenador'>
+                            <option >SELECIONE</option>
+                            {% for coordenador in coordenadores  %}
+                            <option value = '{{coordenador.idcoordenador}}'>{{coordenador.nome}}</option>
+                            {% endfor %}
+                        </select>>
+                       
+                    </div>
+                    
+                        <input type="submit" class="btn_new_course">
+                </form>
+            </div>
+        </section>
+       
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    
+<section style="margin-top: 8%">
+        <form name="formulario" method="POST" action="" onsubmit="return validacao()">
+            <div style="display: inline-block">
+                <input type="text"  class="cadAluno" placeholder="Login"  id="login">
+            
+                <input type="text"  class="cadAluno" placeholder="Nome" name="nome" id="nome" >
+            
+                <input type="email" class="cadAluno" placeholder="Email" id="email_usuario" >
+                
+                <input type="tel"   class="cadAluno" placeholder="Celular" >
+            </div>
+            <div style="display: inline-block">
+                <input type="date" class="cadAluno" min="2001-12-31" name="dia" size="2" maxlength="2" value="dd" id="data_nas">
+        
+                <input type="text" class="cadAluno" placeholder="CPF"  name="cpf" autofocus pattern="[0-9]{11}" id="cpf"  maxlength="11"   >
+                
+                <input type="password" class="cadAluno" placeholder="Senha" id="senha" >
+                <input type="password" class="cadAluno" placeholder="Confirme sua Senha" id="confirma_senha"  >
+                                            
+                
+            </div>
+            <div>
+                <input class="btn_new_course" type="submit">
+            </div>
+            
+                </form>
+</section>
+
+{% endblock %}
